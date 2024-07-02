@@ -1,0 +1,41 @@
+<html>
+<head>    
+<title>Form validation</title>    
+</head>
+<body>
+    <script>
+        function valid() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = document.getElementById("n3").value;
+            var d = document.getElementById("n4").value;
+            if (a == "" || b == "" || c == "" || d == "") {
+                alert("All fields are mandatory.");
+                return false;
+            }
+            else if (b.length!=10) {
+                alert("No. not valid.");
+                return false;
+            }
+            else if (isNaN(b)) {
+                alert("Only nos are allowed.");
+                return false;
+            }
+            else if (c!=d) {
+                alert("Password not same.");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+    <form onsubmit="return valid()" action="msg.html">
+        User ID:<input type="text" id="n1"><br>
+        Contact:<input type="text" id="n2"><br>
+        Password:<input type="password" id="n3"><br>
+        Confirm password<input type="password" id="n4"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
